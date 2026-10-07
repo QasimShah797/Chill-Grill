@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
+  --color-ink: #111111;
+  --color-coal: #1c1c1c;
+  --color-brand: #f5c400;
+  --color-ember: #d01212;
+  --color-paper: #f4f0e6;
+  --color-line: #e6dfd2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #0e0e0e;
+  color: #f7f4ee;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body,
+#root {
+  overflow-x: hidden;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  #root {
+    display: none !important;
+  }
+  #order-receipt {
+    display: block !important;
+    width: 80mm;
+    margin: 0 auto;
+  }
+  .break-after-page {
+    break-after: page;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.section-anchor {
+  scroll-margin-top: 8.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid #f5c400;
+  outline-offset: 2px;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.badge-pop {
+  animation: pop 0.35s ease;
+}
